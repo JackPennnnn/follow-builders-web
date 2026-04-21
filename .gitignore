@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+*.local
+.vite
+*.tsbuildinfo
+public/feeds/*.json
+.DS_Store
+.env
+.env.local
+.idea
+.vscode

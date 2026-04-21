@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --primary: 188 95% 43%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 40%;
+
+    --accent: 188 95% 43%;
+    --accent-foreground: 222 47% 11%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 188 95% 43%;
+
+    --grid-line: 220 13% 92%;
+    --cyan-glow: 188 95% 43%;
+    --violet-glow: 262 83% 58%;
+
+    --radius: 0.875rem;
+  }
+
+  .dark {
+    --background: 224 28% 5%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 25% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --primary: 188 95% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 262 83% 70%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 222 18% 14%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 188 95% 60%;
+    --accent-foreground: 222 47% 11%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 188 95% 60%;
+
+    --grid-line: 220 14% 12%;
+    --cyan-glow: 188 95% 60%;
+    --violet-glow: 262 83% 70%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family:
+      "Inter",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    font-feature-settings:
+      "ss01" on,
+      "cv01" on;
+  }
+}
+
+@layer components {
+  .tech-bg {
+    position: relative;
+    isolation: isolate;
+  }
+  .tech-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-color: hsl(var(--background));
+  }
+  .tech-bg::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(hsl(var(--grid-line)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid-line)) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
+    mask-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .glow-orb {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.5;
+  }
+  .glow-orb.cyan {
+    background: radial-gradient(
+      circle,
+      hsl(var(--cyan-glow) / 0.55),
+      transparent 70%
+    );
+    width: 480px;
+    height: 480px;
+    top: -120px;
+    left: -120px;
+  }
+  .glow-orb.violet {
+    background: radial-gradient(
+      circle,
+      hsl(var(--violet-glow) / 0.45),
+      transparent 70%
+    );
+    width: 520px;
+    height: 520px;
+    bottom: -160px;
+    right: -160px;
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      120deg,
+      hsl(var(--cyan-glow)),
+      hsl(var(--violet-glow))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .tech-card {
+    @apply rounded-2xl border bg-card/80 backdrop-blur-md transition-all duration-300;
+    box-shadow:
+      0 1px 0 0 hsl(var(--border)) inset,
+      0 8px 30px -16px hsl(var(--cyan-glow) / 0.18);
+  }
+  .tech-card:hover {
+    box-shadow:
+      0 1px 0 0 hsl(var(--border)) inset,
+      0 12px 40px -12px hsl(var(--cyan-glow) / 0.35),
+      0 0 0 1px hsl(var(--cyan-glow) / 0.25);
+    transform: translateY(-1px);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border bg-muted/60 px-2 py-0.5 text-xs font-mono text-muted-foreground;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 999px;
+  }
+}

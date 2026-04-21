@@ -69,7 +69,7 @@ export function Header({ lastUpdated, onRefresh, refreshing }: HeaderProps) {
           </Button>
 
           <a
-            href="https://github.com/zarazhangrui/follow-builders"
+            href="https://github.com/JackPennnnn/follow-builders-web"
             target="_blank"
             rel="noreferrer"
             className="hidden sm:inline-flex"

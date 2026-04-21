@@ -53,7 +53,7 @@ export default function App() {
         <span>
           Powered by{" "}
           <a
-            href="https://github.com/zarazhangrui/follow-builders"
+            href="https://github.com/JackPennnnn/follow-builders-web"
             target="_blank"
             rel="noreferrer"
             className="underline-offset-4 hover:underline hover:text-primary"

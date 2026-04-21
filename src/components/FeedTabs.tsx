@@ -24,7 +24,7 @@ export function FeedTabs({ data }: FeedTabsProps) {
         <TabsList className="overflow-x-auto">
           <TabsTrigger value="tweets">
             <Twitter className="size-4" />
-            <span>Tweets</span>
+            <span>X</span>
             <Badge variant="muted" className="ml-1">
               {tweetCount}
             </Badge>

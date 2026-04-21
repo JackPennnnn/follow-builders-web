@@ -27,8 +27,6 @@ Skill 本身很好，但 JSON 直接看实在不舒服。**这个仓库就是它
 
 ## 截图
 
-> _自己换 —— 把 PNG 丢进 `docs/` 然后改下面的路径就行。_
-
 | 浅色 | 深色 |
 | --- | --- |
 | ![light](./docs/screenshot-light.png) | ![dark](./docs/screenshot-dark.png) |

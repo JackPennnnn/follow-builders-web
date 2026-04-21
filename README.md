@@ -27,8 +27,6 @@ The skill is great, but the JSON itself isn't very readable. **This repo is the 
 
 ## Screenshots
 
-> _Add your own — drop PNGs in `docs/` and update the paths below._
-
 | Light | Dark |
 | --- | --- |
 | ![light](./docs/screenshot-light.png) | ![dark](./docs/screenshot-dark.png) |
